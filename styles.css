@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./fonts/PressStart2P-Regular.ttf");
+}
+
+body {
+  font-family: "Press Start 2P";
+  color: whitesmoke;
+  background-color: #292524;
+}

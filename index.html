@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>35Fighters</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <!-- ---------------------------------------------------------------------------- -->
+  <body>
+    <div style="margin: 0">
+      <h1>35 Fighters</h1>
+      <h2>Armando vs. Lescano - Batalla de los Titanes de la Programación</h2>
+      <p>
+        En el mundo de la tecnología, dos profesores de programación, Armando y
+        Lescano, colisionan en un enfrentamiento épico en el aula. La precisión
+        de Armando se encuentra con la creatividad de Lescano mientras chocan
+        sus estilos de enseñanza. Sumérgete en el juego Code Clash y elige tu
+        bando. ¿Seguirás la disciplina estricta de Armando o abrazarás el
+        enfoque innovador de Lescano? La elección es tuya mientras te enfrentas
+        a los desafíos de la educación en programación y descubres el poder del
+        equilibrio en esta aventura educativa."
+      </p>
+    </div>
+
+    <div class="container" style="width: 100%">
+      <div style="position: relative; display: inline-block; margin: 100px">
+        <div
+          style="
+            position: absolute;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 50px;
+          "
+        >
+          <!-- player 1 health -->
+          <div style="position: relative; height: 30px; width: 100%">
+            <div style="background-color: red; height: 30px"></div>
+            <div
+              id="armandoHealth"
+              style="
+                position: absolute;
+                background: #67e8f9;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+              "
+            ></div>
+          </div>
+
+          <!-- Separador -->
+          <div
+            style="
+              background-color: #fbbf24;
+              height: 50px;
+              width: 70px;
+              flex-shrink: 0;
+              border: 3px solid black;
+            "
+          ></div>
+
+          <!-- player 2 health -->
+          <div
+            style="
+              position: relative;
+              height: 30px;
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+            "
+          >
+            <div style="background-color: red; height: 30px; width: 100%"></div>
+            <div
+              id="lescanoHealth"
+              style="
+                position: absolute;
+                background: #67e8f9;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div
+          id="displayWinner"
+          style="
+            position: absolute;
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          "
+        ></div>
+        <canvas style="margin: auto" width="1024;" height="576"></canvas>
+      </div>
+    </div>
+
+    <script src="./js/classes.js"></script>
+    <script src="./js/listeners.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
