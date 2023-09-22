@@ -1,13 +1,12 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
+const backgroundMusic = new Audio("./sources/music/background_music.mp3");
+const startBell = new Audio("./sources/music/start_bell.mp3");
+const epicMusic = new Audio("./sources/music/MUSICA_EPICA.mp3");
 const dyingMoan = new Audio("./sources/music/dying_moan.mp3");
 const yamete = new Audio("./sources/music/yamete.mp3");
 const punch = new Audio("./sources/music/punch.mp3");
-
-c.fillRect(0, 0, canvas.width, canvas.height);
-
 const gravity = 1;
-
 const background = new Sprite({
   position: {
     x: 0,
@@ -149,6 +148,8 @@ const keys = {
   },
 };
 
+backgroundMusic.play();
+c.fillRect(0, 0, canvas.width, canvas.height);
 animate();
 
 function punchingCollision({ arm, body }) {

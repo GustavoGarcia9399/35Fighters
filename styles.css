@@ -4,7 +4,36 @@
 }
 
 body {
-  font-family: "Press Start 2P";
+  background-color: black;
   color: whitesmoke;
-  background-color: #292524;
+  font-family: "Press Start 2P";
+  padding: 0%;
+  margin: 0;
+}
+h1 {
+  font-size: 128px;
+}
+h2 {
+  font-size: 32px;
+}
+section {
+  background-color: #0b0a09;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 5%;
+  min-height: 100vh;
+  border-radius: 120px;
+  margin-top: 1px;
+}
+.hidden {
+  opacity: 0;
+  filter: opacity(5%);
+  transition: all 5s;
+}
+.show {
+  opacity: 1;
+  filter: opacity(100%);
+  transform: translateX(0%);
 }
