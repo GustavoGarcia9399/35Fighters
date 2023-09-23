@@ -39,12 +39,12 @@ window.addEventListener("keydown", (event) => {
         lescano.lastKey = "ArrowRight";
         break;
 
-      case "u":
+      case "Enter":
         lescano.punch();
         break;
-      case "U":
-        lescano.punch();
-        break;
+      // case "U":
+      //   lescano.punch();
+      //   break;
     }
   }
   console.log(event.key);
