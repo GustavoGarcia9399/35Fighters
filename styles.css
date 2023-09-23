@@ -3,6 +3,45 @@
   src: url("./fonts/PressStart2P-Regular.ttf");
 }
 
+.floating-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 15px;
+  text-align: center;
+  color: #292524;
+}
+.floating-icon :hover,
+.music {
+  background-color: white;
+}
+.musicOn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url(./sources/img/music_on.png);
+  background-repeat: no-repeat;
+  background-color: #292524;
+  background-size: 24px;
+  background-position: center;
+  background-position-x: 18px;
+  float: right;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.musicOff {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url(./sources/img/music_off.png);
+  background-repeat: no-repeat;
+  background-color: #292524;
+  background-size: 24px;
+  background-position: center;
+  float: right;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
 body {
   background-color: black;
   color: whitesmoke;
@@ -17,7 +56,7 @@ h2 {
   font-size: 32px;
 }
 section {
-  background-color: #0b0a09;
+  background-color: #0e0413;
   display: grid;
   place-items: center;
   align-content: center;

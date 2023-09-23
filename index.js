@@ -1,12 +1,13 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
-const backgroundMusic = new Audio("./sources/music/background_music.mp3");
 const startBell = new Audio("./sources/music/start_bell.mp3");
 const epicMusic = new Audio("./sources/music/MUSICA_EPICA.mp3");
 const dyingMoan = new Audio("./sources/music/dying_moan.mp3");
 const yamete = new Audio("./sources/music/yamete.mp3");
 const punch = new Audio("./sources/music/punch.mp3");
 const gravity = 1;
+const backgroundMusic = new Audio("./sources/music/background_music.mp3");
+
 const background = new Sprite({
   position: {
     x: 0,
@@ -147,8 +148,6 @@ const keys = {
     pressed: false,
   },
 };
-
-backgroundMusic.play();
 c.fillRect(0, 0, canvas.width, canvas.height);
 animate();
 
@@ -273,6 +272,19 @@ function animate() {
   }
   return;
 }
+
+function muting() {
+  if (document.getElementById("backgroundMusic").className === "musicOff") {
+    document.getElementById("backgroundMusic").className = "musicOn";
+    backgroundMusic.play();
+  } else if (
+    document.getElementById("backgroundMusic").className === "musicOn"
+  ) {
+    document.getElementById("backgroundMusic").className = "musicOff";
+    backgroundMusic.pause();
+  }
+}
+document.getElementById("backgroundMusic").addEventListener("click", muting);
 
 //Declaración de Clases
 
