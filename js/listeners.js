@@ -5,13 +5,24 @@ window.addEventListener("keydown", (event) => {
         keys.a.pressed = true;
         armando.lastKey = "a";
         break;
+      case "A":
+        keys.a.pressed = true;
+        armando.lastKey = "a";
+        break;
 
       case "d":
         keys.d.pressed = true;
         armando.lastKey = "d";
         break;
+      case "D":
+        keys.d.pressed = true;
+        armando.lastKey = "d";
+        break;
 
       case "j":
+        armando.punch();
+        break;
+      case "J":
         armando.punch();
         break;
     }
@@ -31,6 +42,9 @@ window.addEventListener("keydown", (event) => {
       case "u":
         lescano.punch();
         break;
+      case "U":
+        lescano.punch();
+        break;
     }
   }
   console.log(event.key);
@@ -42,7 +56,13 @@ window.addEventListener("keyup", (event) => {
     case "a":
       keys.a.pressed = false;
       break;
+    case "A":
+      keys.a.pressed = false;
+      break;
     case "d":
+      keys.d.pressed = false;
+      break;
+    case "D":
       keys.d.pressed = false;
       break;
 
