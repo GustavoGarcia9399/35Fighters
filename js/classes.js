@@ -124,7 +124,7 @@ class Fighter extends Sprite {
     this.isPunching = true;
     setTimeout(() => {
       this.isPunching = false;
-    }, 600);
+    }, 300);
   }
 
   hit() {
