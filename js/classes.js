@@ -49,6 +49,7 @@ class Sprite {
   }
 }
 
+// ------------------------------------ class fighter------------------------------------
 class Fighter extends Sprite {
   constructor({
     position,
@@ -86,7 +87,11 @@ class Fighter extends Sprite {
       width: punchBox.width,
       height: punchBox.height,
     };
-    this.color = color;
+    (this.initialPosition = {
+      x: this.position.x,
+      y: this.position.y,
+    }),
+      (this.color = color);
     this.isPunching;
     this.health = 100;
     this.framesCurrent = 0;
@@ -119,6 +124,7 @@ class Fighter extends Sprite {
       this.velocity.y = 0;
     } else this.velocity.y += gravity;
   }
+
   punch() {
     this.switchSprite("punch");
     this.isPunching = true;
@@ -129,12 +135,15 @@ class Fighter extends Sprite {
     if (this.health <= 0) {
       this.switchSprite("death");
       dyingMoan.play();
+      setTimeout(() => {
+        gameOver();
+      }, 3000);
     } else {
       this.switchSprite("hit");
       punch.play();
       setTimeout(() => {
-      this.isPunching = false;
-    }, 1000);
+        this.isPunching = false;
+      }, 1000);
     }
   }
 
@@ -195,5 +204,13 @@ class Fighter extends Sprite {
         }
         break;
     }
+  }
+
+  resetPosition() {
+    this.health = 100;
+    this.dead = false;
+    this.switchSprite("idle");
+    this.position.x = this.initialPosition.x;
+    this.position.y = this.initialPosition.y;
   }
 }

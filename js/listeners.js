@@ -42,14 +42,10 @@ window.addEventListener("keydown", (event) => {
       case "Enter":
         lescano.punch();
         break;
-      // case "U":
-      //   lescano.punch();
-      //   break;
     }
   }
   console.log(event.key);
 });
-
 window.addEventListener("keyup", (event) => {
   switch (event.key) {
     // Armando keys

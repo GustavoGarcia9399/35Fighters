@@ -3,45 +3,9 @@
   src: url("./fonts/PressStart2P-Regular.ttf");
 }
 
-.floating-icon {
-  position: fixed;
-  bottom: 5%;
-  right: 15px;
-  text-align: center;
-  color: #292524;
+* {
+  box-sizing: border-box;
 }
-.floating-icon :hover,
-.music {
-  background-color: white;
-}
-.musicOn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: url(./sources/img/music_on.png);
-  background-repeat: no-repeat;
-  background-color: #292524;
-  background-size: 24px;
-  background-position: center;
-  background-position-x: 18px;
-  float: right;
-  margin: 0 auto;
-  cursor: pointer;
-}
-.musicOff {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: url(./sources/img/music_off.png);
-  background-repeat: no-repeat;
-  background-color: #292524;
-  background-size: 24px;
-  background-position: center;
-  float: right;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
 body {
   background-color: black;
   color: whitesmoke;
@@ -68,6 +32,7 @@ section {
   scroll-snap-type: y mandatory;
   scroll-snap-align: start;
 }
+
 .hidden {
   opacity: 0;
   filter: opacity(5%);
@@ -77,4 +42,63 @@ section {
   opacity: 1;
   filter: opacity(100%);
   transform: translateX(0%);
+}
+.floating-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 15px;
+  text-align: center;
+  color: #292524;
+}
+.floating-icon .label {
+  position: relative;
+  align-items: center;
+  top: 18px;
+  background-size: contain;
+  padding: 10px 15px 10px 15px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.floating-icon :hover,
+.music {
+  background-color: white;
+}
+.musicOn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url(./sources/img/music_on.png);
+  background-repeat: no-repeat;
+  background-color: #292524;
+  background-size: 24px;
+  background-position: center;
+  background-position-x: 17px;
+  float: right;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.musicOff {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url(./sources/img/music_off.png);
+  background-repeat: no-repeat;
+  background-color: #292524;
+  background-size: 24px;
+  background-position: center;
+  float: right;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.winner {
+  margin-bottom: 50px;
+  position: absolute;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

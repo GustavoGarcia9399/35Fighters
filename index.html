@@ -4,30 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>35Fighters</title>
+    <link rel="icon" href="./sources/img/favicon.ico" />
 
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./js/apps.js"></script>
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-    </style>
+    <style></style>
   </head>
   <!-- ---------------------------------------------------------------------------- -->
   <body>
-    <section class="hidden">
+    <section id="1" class="hidden">
       <h1>35 Fighters</h1>
     </section>
 
-    <section class="hidden">
+    <section id="2" class="hidden">
       <h2>
         Armando vs. Lescano <br />
         Batalla de los Titanes de la Programación
       </h2>
     </section>
 
-    <section class="hidden">
+    <section id="3" class="hidden">
       <p>
         En el mundo de la tecnología, dos profesores de programación, Armando y
         Lescano, colisionan en un enfrentamiento épico en el aula. La precisión
@@ -39,8 +36,15 @@
         equilibrio en esta aventura educativa."
       </p>
     </section>
-    <section class="hidden">
-      <div class="container" style="width: 100%">
+
+    <section id="juego" class="hidden">
+      <!-- ALL GAME CONTAINER -->
+      <div
+        id="contenedor-juego"
+        class="container"
+        style="width: 100%; display: none"
+      >
+        <!-- HEALTH BARS -->
         <div style="position: relative; display: inline-block; margin: 100px">
           <div
             style="
@@ -51,7 +55,7 @@
               padding: 50px;
             "
           >
-            <!-- player 1 health -->
+            <!-- ARMANDO HEALTH -->
             <div style="position: relative; height: 30px; width: 100%">
               <div style="background-color: red; height: 30px"></div>
               <div
@@ -67,7 +71,7 @@
               ></div>
             </div>
 
-            <!-- Separador -->
+            <!-- TIMER -->
             <div
               style="
                 background-color: #fbbf24;
@@ -78,7 +82,7 @@
               "
             ></div>
 
-            <!-- player 2 health -->
+            <!-- LESCANO HEALTH -->
             <div
               style="
                 position: relative;
@@ -104,31 +108,61 @@
               ></div>
             </div>
           </div>
-          <div
-            id="displayWinner"
-            style="
-              position: absolute;
-              color: white;
-              display: none;
-              align-items: center;
-              justify-content: center;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-            "
-          ></div>
-          <canvas style="margin: auto" width="1024;" height="576"></canvas>
+
+          <!-- CANVAS GAME -->
+          <canvas
+            id="canvas"
+            style="margin: auto"
+            width="1024;"
+            height="576"
+          ></canvas>
         </div>
       </div>
+
+      <!-- SCREENS START AND OVER -->
+      <div id="start-screen" style="display: block">
+        <a href="#juego" onclick="startGame()">START</a>
+      </div>
+      <div id="game-over" style="display: none">
+        <div id="displayWinner" class="winner"></div>
+        <a
+          href="#juego"
+          onclick="startGame()"
+          style="
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            left: 0;
+          "
+          >RESTART</a
+        >
+      </div>
     </section>
-    <!-- --------------------- MUTEAR MUSICA DE FONDO --------------------- -->
+
+    <!-- 
+    <nav>
+      <li>
+        <a href="#1" class="dot" data-scroll="1"></a>
+      </li>
+      <li>
+        <a href="#2" class="dot" data-scroll="2"></a>
+      </li>
+      <li>
+        <a href="#3" class="dot" data-scroll="3"></a>
+      </li>
+      <li>
+        <a href="#juego" class="dot" data-scroll="juego"></a>
+      </li>
+    </nav> -->
+
+    <!-- MUSICA DE FONDO -->
     <div class="floating-icon">
       <div id="backgroundMusic" class="musicOff"></div>
     </div>
 
     <script src="./js/classes.js"></script>
     <script src="./js/listeners.js"></script>
-    <script src="./index.js"></script>
+    <script src="./game.js"></script>
   </body>
 </html>
