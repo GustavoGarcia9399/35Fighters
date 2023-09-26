@@ -3,7 +3,6 @@ const c = canvas.getContext("2d");
 const startBell = new Audio("./sources/music/start_bell.mp3");
 const epicMusic = new Audio("./sources/music/MUSICA_EPICA.mp3");
 const dyingMoan = new Audio("./sources/music/dying_moan.mp3");
-const yamete = new Audio("./sources/music/yamete.mp3");
 const punch = new Audio("./sources/music/punch.mp3");
 const gravity = 1;
 const backgroundMusic = new Audio("./sources/music/background_music.mp3");
@@ -278,29 +277,43 @@ function animate() {
   }
 }
 function muting() {
+  if (!epicMusic.paused) {
+    backgroundMusic.volume = 0;
+  }
   if (document.getElementById("backgroundMusic").className === "musicOff") {
     document.getElementById("backgroundMusic").className = "musicOn";
     backgroundMusic.play();
+    epicMusic.volume = 0.5;
   } else if (
     document.getElementById("backgroundMusic").className === "musicOn"
   ) {
     document.getElementById("backgroundMusic").className = "musicOff";
+    epicMusic.volume = 0;
     backgroundMusic.pause();
   }
 }
 document.getElementById("backgroundMusic").addEventListener("click", muting);
+
+// ------------------------------------START AND GAME OVER FUNCTIONS-------------------------------------
 function startGame() {
+  let gameRunning = "true";
   let gameContainer = document.getElementById("contenedor-juego");
   let startScreen = document.getElementById("start-screen");
   let gameOverScreen = document.getElementById("game-over");
   startScreen.style.display = "none";
-  gameContainer.style.display = "block";
   gameOverScreen.style.display = "none";
-  document.querySelector("#displayWinner").style.display = "none";
-  armando.health = 100;
-  lescano.health = 100;
-  armando.resetPosition();
-  lescano.resetPosition();
+  backgroundMusic.pause();
+  startBell.play();
+  setTimeout(() => {
+    gameContainer.style.display = "block";
+    document.querySelector("#displayWinner").style.display = "none";
+    armando.health = 100;
+    lescano.health = 100;
+    epicMusic.play();
+    epicMusic.volume = 0.5;
+    armando.resetPosition();
+    lescano.resetPosition();
+  }, 4000);
 }
 
 function gameOver() {
@@ -308,18 +321,9 @@ function gameOver() {
   let gameOverScreen = document.getElementById("game-over");
   gameOverScreen.style.display = "block";
   gameContainer.style.display = "none";
+  epicMusic.volume = 0.2;
   if (armando.health <= 0 || lescano.health <= 0) {
     sayWinner({ armando, lescano });
   }
   return;
 }
-
-//Declaración de Clases
-
-// Variables y Constantes //DOM
-
-//Instancias de Clases
-
-//Eventos
-
-//Funciones
