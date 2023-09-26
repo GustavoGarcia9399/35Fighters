@@ -122,9 +122,6 @@ class Fighter extends Sprite {
   punch() {
     this.switchSprite("punch");
     this.isPunching = true;
-    setTimeout(() => {
-      this.isPunching = false;
-    }, 300);
   }
 
   hit() {
@@ -135,6 +132,9 @@ class Fighter extends Sprite {
     } else {
       this.switchSprite("hit");
       punch.play();
+      setTimeout(() => {
+      this.isPunching = false;
+    }, 1000);
     }
   }
 
