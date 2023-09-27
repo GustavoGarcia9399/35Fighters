@@ -13,138 +13,139 @@
   </head>
   <!-- ---------------------------------------------------------------------------- -->
   <body>
-    <section id="1" class="hidden">
-      <h1>35 Fighters</h1>
-    </section>
+    <article class="scroller">
+      <section id="1" class="hidden">
+        <h1>35 Fighters</h1>
+      </section>
 
-    <section id="2" class="hidden">
-      <h2>
-        Armando vs. Lescano <br />
-        Batalla de los Titanes de la Programación
-      </h2>
-    </section>
+      <section id="2" class="hidden">
+        <h2>
+          Armando vs. Lescano <br />
+          Batalla de los Titanes de la Programación
+        </h2>
+      </section>
 
-    <section id="3" class="hidden">
-      <p>
-        En el mundo de la tecnología, dos profesores de programación, Armando y
-        Lescano, colisionan en un enfrentamiento épico en el aula. La precisión
-        de Armando se encuentra con la creatividad de Lescano mientras chocan
-        sus estilos de enseñanza. Sumérgete en la batalla y elige tu bando.
-        ¿Seguirás la disciplina estricta de Armando o abrazarás el enfoque
-        innovador de Lescano? La elección es tuya mientras te enfrentas a los
-        desafíos de la educación en programación y descubres el poder del
-        equilibrio en esta aventura educativa."
-      </p>
-    </section>
+      <section id="3" class="hidden">
+        <p>
+          En el mundo de la tecnología, dos profesores de programación, Armando
+          y Lescano, colisionan en un enfrentamiento épico en el aula. La
+          precisión de Armando se encuentra con la creatividad de Lescano
+          mientras chocan sus estilos de enseñanza. Sumérgete en la batalla y
+          elige tu bando. ¿Seguirás la disciplina estricta de Armando o
+          abrazarás el enfoque innovador de Lescano? La elección es tuya
+          mientras te enfrentas a los desafíos de la educación en programación y
+          descubres el poder del equilibrio en esta aventura educativa."
+        </p>
+      </section>
 
-    <section id="juego" class="hidden">
-      <!-- ALL GAME CONTAINER -->
-      <div
-        id="contenedor-juego"
-        class="container"
-        style="width: 100%; display: none"
-      >
-        <!-- HEALTH BARS -->
-        <div style="position: relative; display: inline-block; margin: 100px">
-          <div
-            style="
-              position: absolute;
-              display: flex;
-              width: 100%;
-              align-items: center;
-              padding: 50px;
-            "
-          >
-            <!-- ARMANDO HEALTH -->
-            <div style="position: relative; height: 30px; width: 100%">
-              <div style="background-color: red; height: 30px"></div>
-              <div
-                id="armandoHealth"
-                style="
-                  position: absolute;
-                  background: #67e8f9;
-                  top: 0;
-                  bottom: 0;
-                  right: 0;
-                  left: 0;
-                "
-              ></div>
-            </div>
-
-            <!-- TIMER -->
+      <section id="juego" class="hidden">
+        <!-- ALL GAME CONTAINER -->
+        <div
+          id="contenedor-juego"
+          class="container"
+          style="width: 100%; display: none"
+        >
+          <!-- HEALTH BARS -->
+          <div style="position: relative; display: inline-block; margin: 100px">
             <div
               style="
-                background-color: #fbbf24;
-                height: 50px;
-                width: 70px;
-                flex-shrink: 0;
-                border: 3px solid black;
-              "
-            ></div>
-
-            <!-- LESCANO HEALTH -->
-            <div
-              style="
-                position: relative;
-                height: 30px;
-                width: 100%;
+                position: absolute;
                 display: flex;
-                justify-content: flex-end;
+                width: 100%;
+                align-items: center;
+                padding: 50px;
               "
             >
+              <!-- ARMANDO HEALTH -->
+              <div style="position: relative; height: 30px; width: 100%">
+                <div style="background-color: red; height: 30px"></div>
+                <div
+                  id="armandoHealth"
+                  style="
+                    position: absolute;
+                    background: #67e8f9;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                  "
+                ></div>
+              </div>
+
+              <!-- TIMER -->
               <div
-                style="background-color: red; height: 30px; width: 100%"
-              ></div>
-              <div
-                id="lescanoHealth"
                 style="
-                  position: absolute;
-                  background: #67e8f9;
-                  top: 0;
-                  bottom: 0;
-                  right: 0;
-                  width: 100%;
+                  background-color: #fbbf24;
+                  height: 50px;
+                  width: 70px;
+                  flex-shrink: 0;
+                  border: 3px solid black;
                 "
               ></div>
+
+              <!-- LESCANO HEALTH -->
+              <div
+                style="
+                  position: relative;
+                  height: 30px;
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-end;
+                "
+              >
+                <div
+                  style="background-color: red; height: 30px; width: 100%"
+                ></div>
+                <div
+                  id="lescanoHealth"
+                  style="
+                    position: absolute;
+                    background: #67e8f9;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                  "
+                ></div>
+              </div>
             </div>
+
+            <!-- CANVAS GAME -->
+            <canvas
+              id="canvas"
+              style="margin: auto"
+              width="1024;"
+              height="576"
+            ></canvas>
           </div>
-
-          <!-- CANVAS GAME -->
-          <canvas
-            id="canvas"
-            style="margin: auto"
-            width="1024;"
-            height="576"
-          ></canvas>
         </div>
-      </div>
 
-      <!-- SCREENS START AND OVER -->
-      <div id="start-screen" style="display: block">
-        <div id="keys" class="keysText">
-          Armando: A D to move / J to punch <br />Lescano: <- -> to move / Enter
-          to punch
+        <!-- SCREENS START AND OVER -->
+        <div id="start-screen" style="display: block">
+          <div id="keys" class="keysText">
+            Armando: A D to move / J to punch <br />Lescano: <- -> to move /
+            Enter to punch
+          </div>
+          <a href="#juego" onclick="startGame()">START</a>
         </div>
-        <a href="#juego" onclick="startGame()">START</a>
-      </div>
-      <div id="game-over" style="display: none">
-        <div id="displayWinner" class="winner"></div>
-        <a
-          href="#juego"
-          onclick="startGame()"
-          style="
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            right: 0;
-            left: 0;
-          "
-          >RESTART</a
-        >
-      </div>
-    </section>
+        <div id="game-over" style="display: none">
+          <div id="displayWinner" class="winner"></div>
+          <a
+            href="#juego"
+            onclick="startGame()"
+            style="
+              position: absolute;
+              align-items: center;
+              justify-content: center;
+              right: 0;
+              left: 0;
+            "
+            >RESTART</a
+          >
+        </div>
+      </section>
+    </article>
 
-    <!-- 
     <nav>
       <li>
         <a href="#1" class="dot" data-scroll="1"></a>
@@ -158,7 +159,7 @@
       <li>
         <a href="#juego" class="dot" data-scroll="juego"></a>
       </li>
-    </nav> -->
+    </nav>
 
     <!-- MUSICA DE FONDO -->
     <div class="floating-icon">
