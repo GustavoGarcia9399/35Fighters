@@ -44,7 +44,7 @@ h2 {
 .hidden {
   opacity: 0;
   filter: opacity(5%);
-  transition: all 6s;
+  transition: all 4s;
 }
 .show {
   opacity: 1;
