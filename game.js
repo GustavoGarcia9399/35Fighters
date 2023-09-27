@@ -296,10 +296,12 @@ document.getElementById("backgroundMusic").addEventListener("click", muting);
 
 // ------------------------------------START AND GAME OVER FUNCTIONS-------------------------------------
 function startGame() {
-  let gameRunning = "true";
   let gameContainer = document.getElementById("contenedor-juego");
   let startScreen = document.getElementById("start-screen");
   let gameOverScreen = document.getElementById("game-over");
+  this.health = 100;
+  document.querySelector("#armandoHealth").style.width = "100%";
+  document.querySelector("#lescanoHealth").style.width = "100%";
   startScreen.style.display = "none";
   gameOverScreen.style.display = "none";
   backgroundMusic.pause();
@@ -307,12 +309,12 @@ function startGame() {
   setTimeout(() => {
     gameContainer.style.display = "block";
     document.querySelector("#displayWinner").style.display = "none";
+    armando.resetPosition();
+    lescano.resetPosition();
     armando.health = 100;
     lescano.health = 100;
     epicMusic.play();
     epicMusic.volume = 0.5;
-    armando.resetPosition();
-    lescano.resetPosition();
   }, 4000);
 }
 

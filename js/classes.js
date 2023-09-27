@@ -104,6 +104,7 @@ class Fighter extends Sprite {
       sprites[sprite].image.src = sprites[sprite].imageSrc;
     }
   }
+
   update() {
     this.draw();
     if (!this.dead) this.animateFrames();
@@ -146,7 +147,14 @@ class Fighter extends Sprite {
       }, 1000);
     }
   }
-
+  resetPosition() {
+    this.image = this.sprites.idle.image;
+    // this.switchSprite("idle");
+    this.health = 100;
+    this.dead = false;
+    this.position.x = this.initialPosition.x;
+    this.position.y = this.initialPosition.y;
+  }
   // ------------------------------------------------------------------------------------------
   switchSprite(sprite) {
     if (this.image === this.sprites.death.image) {
@@ -204,13 +212,5 @@ class Fighter extends Sprite {
         }
         break;
     }
-  }
-
-  resetPosition() {
-    this.health = 100;
-    this.dead = false;
-    this.switchSprite("idle");
-    this.position.x = this.initialPosition.x;
-    this.position.y = this.initialPosition.y;
   }
 }
