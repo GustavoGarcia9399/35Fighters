@@ -14,18 +14,18 @@
   <!-- ---------------------------------------------------------------------------- -->
   <body>
     <article class="scroller">
-      <section id="1" class="hidden">
+      <section id="section1" class="hidden">
         <h1>35 Fighters</h1>
       </section>
 
-      <section id="2" class="hidden">
+      <section id="section2" class="hidden">
         <h2>
           Armando vs. Lescano <br />
           Batalla de los Titanes de la Programación
         </h2>
       </section>
 
-      <section id="3" class="hidden">
+      <section id="section3" class="hidden">
         <p>
           En el mundo de la tecnología, dos profesores de programación, Armando
           y Lescano, colisionan en un enfrentamiento épico en el aula. La
@@ -38,7 +38,7 @@
         </p>
       </section>
 
-      <section id="juego" class="hidden">
+      <section id="game" class="hidden">
         <!-- ALL GAME CONTAINER -->
         <div
           id="contenedor-juego"
@@ -126,12 +126,12 @@
             Armando: moverse "A D" / golpear "J"<br />Lescano: moverse "<- ->" /
             golpear "Enter"
           </div>
-          <a href="#juego" onclick="startGame()">START</a>
+          <a href="#game" onclick="startGame()">START</a>
         </div>
         <div id="game-over" style="display: none">
           <div id="displayWinner" class="winner"></div>
           <a
-            href="#juego"
+            href="#game"
             onclick="startGame()"
             style="
               position: absolute;
@@ -144,22 +144,13 @@
           >
         </div>
       </section>
+      <nav class="navbar">
+        <a href="#section1" class="dot" data-scroll="1"></a>
+        <a href="#section2" class="dot" data-scroll="2"></a>
+        <a href="#section3" class="dot" data-scroll="3"></a>
+        <a href="#game" class="dot" data-scroll="juego"></a>
+      </nav>
     </article>
-
-    <nav>
-      <li>
-        <a href="#1" class="dot" data-scroll="1"></a>
-      </li>
-      <li>
-        <a href="#2" class="dot" data-scroll="2"></a>
-      </li>
-      <li>
-        <a href="#3" class="dot" data-scroll="3"></a>
-      </li>
-      <li>
-        <a href="#juego" class="dot" data-scroll="juego"></a>
-      </li>
-    </nav>
 
     <!-- MUSICA DE FONDO -->
     <div class="floating-icon">

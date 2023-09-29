@@ -2,10 +2,13 @@
   font-family: "Press Start 2P";
   src: url("./fonts/PressStart2P-Regular.ttf");
 }
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   box-sizing: border-box;
 }
+
 body {
   background-color: black;
   color: whitesmoke;
@@ -16,6 +19,41 @@ body {
   overflow: hidden;
   scroll-snap-type: y mandatory;
 }
+body ::-webkit-scrollbar {
+  width: 6px;
+}
+body ::-webkit-scrollbar-track {
+  background: black;
+}
+body ::-webkit-scrollbar-thumb {
+  background: #291036;
+  border-radius: 3px;
+}
+.navbar {
+  display: flex;
+  position: fixed;
+
+  flex-direction: column;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  /* z-index: 1000; */
+  border-radius: 18px;
+  background-color: #292929ce;
+}
+.navbar .dot {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.navbar :hover {
+  background-color: rgba(255, 255, 255);
+}
+
 h1 {
   font-size: 128px;
 }
@@ -24,10 +62,10 @@ h2 {
 }
 .scroller {
   height: 100vh;
-  /* scroll-snap-points-y: repeat(100vh); */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
+
 .scroller section {
   background-color: #0e0413;
   display: grid;
@@ -44,7 +82,7 @@ h2 {
 .hidden {
   opacity: 0;
   filter: opacity(5%);
-  transition: all 4s;
+  transition: all 6s;
 }
 .show {
   opacity: 1;
@@ -56,7 +94,7 @@ h2 {
   bottom: 5%;
   right: 4%;
   text-align: center;
-  color: #292524;
+  color: #292929ee;
 }
 .floating-icon .label {
   position: relative;
@@ -77,7 +115,7 @@ h2 {
   border-radius: 50%;
   background: url(./sources/img/music_on.png);
   background-repeat: no-repeat;
-  background-color: #292524;
+  background-color: #292929ee;
   background-size: 24px;
   background-position: center;
   background-position-x: 17px;
@@ -91,7 +129,7 @@ h2 {
   border-radius: 50%;
   background: url(./sources/img/music_off.png);
   background-repeat: no-repeat;
-  background-color: #292524;
+  background-color: #292929ee;
   background-size: 24px;
   background-position: center;
   float: right;

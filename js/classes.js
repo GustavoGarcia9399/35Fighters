@@ -144,7 +144,7 @@ class Fighter extends Sprite {
       punch.play();
       setTimeout(() => {
         this.isPunching = false;
-      }, 1000);
+      }, 250);
     }
   }
   resetPosition() {
