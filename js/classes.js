@@ -125,23 +125,26 @@ class Fighter extends Sprite {
       this.velocity.y = 0;
     } else this.velocity.y += gravity;
   }
-
   punch() {
-    this.switchSprite("punch");
-    this.isPunching = true;
+    if (timer > 0) {
+      this.switchSprite("punch");
+      this.isPunching = true;
+    }
   }
 
   hit() {
     this.health -= 5;
-    if (this.health <= 0) {
-      this.switchSprite("death");
-      dyingMoan.play();
-      setTimeout(() => {
-        gameOver();
-      }, 3000);
-    } else {
-      this.switchSprite("hit");
-      punch.play();
+    if (!this.dead) {
+      if (this.health <= 0) {
+        this.switchSprite("death");
+        dyingMoan.play();
+        setTimeout(() => {
+          gameOver();
+        }, 3000);
+      } else {
+        this.switchSprite("hit");
+        punch.play();
+      }
     }
   }
   resetPosition() {
@@ -157,6 +160,7 @@ class Fighter extends Sprite {
     if (this.image === this.sprites.death.image) {
       if (this.framesCurrent === this.sprites.death.framesMax - 1)
         this.dead = true;
+      clearTimeout(timerId);
       return;
     }
 

@@ -6,7 +6,10 @@
   font-family: "Foldit";
   src: url("./fonts/Foldit/Foldit-VariableFont_wght.ttf");
 }
-
+@font-face {
+  font-family: "Handjet";
+  src: url("./fonts/Handjet/Handjet-VariableFont_ELGR\,ELSH\,wght.ttf");
+}
 *,
 html {
   box-sizing: border-box;
@@ -34,6 +37,21 @@ body ::-webkit-scrollbar-thumb {
   background: #291036;
   border-radius: 3px;
 }
+
+.timer {
+  background-color: #fbbf24;
+  height: 70px;
+  width: 70px;
+  flex-shrink: 0;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Handjet;
+  font-size: 64px;
+  color: black;
+}
+
 .navbar {
   display: flex;
   position: fixed;
@@ -71,6 +89,7 @@ p {
   font-size: 16px;
   margin: 10%;
 }
+
 .scroller {
   height: 100vh;
   overflow-y: scroll;

@@ -169,15 +169,6 @@ function punchingCollision({ arm, body }) {
   );
 }
 
-function sayWinner({ armando, lescano }) {
-  document.querySelector("#displayWinner").style.display = "flex";
-  if (armando.health > lescano.health) {
-    document.querySelector("#displayWinner").innerHTML = "ARMANDO WINS";
-  } else if (lescano.health > armando.health) {
-    document.querySelector("#displayWinner").innerHTML = "LESCANO WINS";
-  }
-}
-
 function animate() {
   window.requestAnimationFrame(animate);
   c.fillStyle = "black";
@@ -294,6 +285,33 @@ function muting() {
 }
 document.getElementById("backgroundMusic").addEventListener("click", muting);
 
+function sayWinner({ armando, lescano, timerId }) {
+  document.querySelector("#displayWinner").style.display = "flex";
+  if (armando.health === lescano.health) {
+    document.querySelector("#displayWinner").innerHTML = "EMPATE";
+  } else if (armando.health > lescano.health) {
+    document.querySelector("#displayWinner").innerHTML = "ARMANDO WINS";
+  } else if (lescano.health > armando.health) {
+    document.querySelector("#displayWinner").innerHTML = "LESCANO WINS";
+  }
+}
+
+let timer = 20;
+let timerId;
+function decreaseTimer() {
+  if (timer > 0) {
+    timerId = setTimeout(decreaseTimer, 1000);
+    timer--;
+    document.querySelector("#timer").innerHTML = timer;
+  }
+
+  if (timer === 0) {
+    // Animation.pause();
+    setTimeout(() => {
+      gameOver();
+    }, 3000);
+  }
+}
 // ------------------------------------START AND GAME OVER FUNCTIONS-------------------------------------
 function startGame() {
   let gameContainer = document.getElementById("contenedor-juego");
@@ -313,6 +331,8 @@ function startGame() {
     lescano.resetPosition();
     armando.health = 100;
     lescano.health = 100;
+    timer = 20;
+    decreaseTimer();
     epicMusic.play();
     epicMusic.volume = 0.5;
   }, 4000);
@@ -324,8 +344,16 @@ function gameOver() {
   gameOverScreen.style.display = "block";
   gameContainer.style.display = "none";
   epicMusic.volume = 0.2;
-  if (armando.health <= 0 || lescano.health <= 0) {
-    sayWinner({ armando, lescano });
+  if (timer === 0) {
+    if (armando.health === lescano.health) {
+      sayWinner({ armando, lescano, timerId });
+    } else if (
+      armando.health < lescano.health ||
+      lescano.health < armando.health
+    ) {
+      sayWinner({ armando, lescano, timerId });
+    }
+  } else {
+    sayWinner({ armando, lescano, timerId });
   }
-  return;
 }
