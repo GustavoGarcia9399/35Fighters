@@ -296,7 +296,7 @@ function sayWinner({ armando, lescano, timerId }) {
   }
 }
 
-let timer = 20;
+let timer = 60;
 let timerId;
 function decreaseTimer() {
   if (timer > 0) {
@@ -331,7 +331,7 @@ function startGame() {
     lescano.resetPosition();
     armando.health = 100;
     lescano.health = 100;
-    timer = 20;
+    timer = 60;
     decreaseTimer();
     epicMusic.play();
     epicMusic.volume = 0.5;
