@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Rubik Mono One";
+  src: url("./fonts/Rubik_Mono_One/RubikMonoOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: url("./img/laboratorio_background.jpg") no-repeat;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.header:hover::before {
+  left: 100%;
+}
+.logo {
+  text-decoration: none;
+  border-radius: 10px;
+  align-items: center;
+  transition: 0.5s;
+}
+.logo:hover {
+  background-color: white;
+  box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
+}
+.logo img {
+  height: 48px;
+  width: auto;
+  position: relative;
+  top: 2px;
+  margin: 1px 4px 1px 4px;
+  border-radius: 10px;
+}
+.navBar .navBtn {
+  color: white;
+  font-size: 16px;
+  font-family: "Poppins";
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.5s;
+  padding: 5px 8px 5px 8px;
+  border-radius: 10px;
+}
+.navBtn:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
+}
