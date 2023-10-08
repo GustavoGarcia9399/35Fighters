@@ -1,2 +1,2 @@
 # 35Fighters
-jueguito
+Autor Gustavo García
