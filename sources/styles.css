@@ -58,8 +58,8 @@ body {
   transition: 0.5s;
 }
 .logo:hover {
-  background-color: #f8d0ff;
-  box-shadow: 0 0 2px #f8d0ff, 0 0 15px #f8d0ff, 0 0 25px #f8d0ff;
+  background-color: white;
+  box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
 }
 .logo img {
   height: 48px;
@@ -80,7 +80,7 @@ body {
   border-radius: 10px;
 }
 .navBtn:hover {
-  background-color: #f8d0ff;
+  background-color: white;
   color: black;
-  box-shadow: 0 0 2px #f8d0ff, 0 0 15px #f8d0ff, 0 0 25px #f8d0ff;
+  box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
 }
