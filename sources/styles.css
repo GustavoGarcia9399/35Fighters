@@ -15,13 +15,23 @@
 
 body {
   min-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+  align-items: center;
+  justify-content: center;
 }
-
-.background {
+.video-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   position: absolute;
-  height: auto;
+}
+.video-container .background {
+  left: 0;
+  top: 0;
   width: 100%;
+  height: auto;
+  z-index: -10;
+  visibility: visible;
 }
 .header {
   display: flex;
@@ -87,4 +97,27 @@ body {
   background-color: white;
   color: black;
   box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
+}
+.scroller {
+  display: relative;
+  width: 960px;
+  height: 480px;
+  margin: 5% auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: red;
+  overflow: hidden;
+}
+.scroller section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 auto;
+  background-color: #1c1917;
+  border-radius: 32px;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
