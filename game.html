@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>35Fighters</title>
+    <link rel="icon" href="./sources/img/favicon.ico" />
+
+    <link rel="stylesheet" href="./game/game.css" />
+    <script defer src="./game/js/apps.js"></script>
+  </head>
+  <!-- ---------------------------------------------------------------------------- -->
+  <body>
+    <article class="scroller">
+      <section id="section1" class="hidden">
+        <h1>35 Fighters</h1>
+      </section>
+
+      <section id="section2" class="hidden">
+        <h2>
+          Armando vs. Lescano <br />
+          Batalla de los Titanes de la Programación
+        </h2>
+      </section>
+
+      <section id="section3" class="hidden">
+        <p>
+          En el mundo de la tecnología, dos profesores de programación, Armando
+          y Lescano, colisionan en un enfrentamiento épico en el aula. La
+          precisión de Armando se encuentra con la creatividad de Lescano
+          mientras chocan sus estilos de enseñanza. Sumérgete en la batalla y
+          elige tu bando. ¿Seguirás la disciplina estricta de Armando o
+          abrazarás el enfoque innovador de Lescano? La elección es tuya
+          mientras te enfrentas a los desafíos de la educación en programación y
+          descubres el poder del equilibrio en esta aventura educativa.
+        </p>
+      </section>
+
+      <section id="game" class="hidden">
+        <!-- ALL GAME CONTAINER -->
+        <div
+          id="contenedor-juego"
+          class="container"
+          style="width: 100%; display: none"
+        >
+          <!-- HEALTH BARS -->
+          <div style="position: relative; display: inline-block; margin: 100px">
+            <div
+              style="
+                position: absolute;
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: 50px;
+              "
+            >
+              <!-- ARMANDO HEALTH -->
+              <div style="position: relative; height: 30px; width: 100%">
+                <div style="background-color: red; height: 30px"></div>
+                <div
+                  id="armandoHealth"
+                  style="
+                    position: absolute;
+                    background: #67e8f9;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                  "
+                ></div>
+              </div>
+
+              <!-- TIMER -->
+              <div id="timer" class="timer">60</div>
+
+              <!-- LESCANO HEALTH -->
+              <div
+                style="
+                  position: relative;
+                  height: 30px;
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-end;
+                "
+              >
+                <div
+                  style="background-color: red; height: 30px; width: 100%"
+                ></div>
+                <div
+                  id="lescanoHealth"
+                  style="
+                    position: absolute;
+                    background: #67e8f9;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                  "
+                ></div>
+              </div>
+            </div>
+
+            <!-- CANVAS GAME -->
+            <canvas
+              id="canvas"
+              style="margin: auto"
+              width="1024;"
+              height="576"
+            ></canvas>
+          </div>
+        </div>
+
+        <!-- SCREENS START AND OVER -->
+        <div id="start-screen" style="display: block">
+          <div id="keys" class="keysText">
+            Armando: moverse "A D" / golpear "J"<br />Lescano: moverse "<- ->" /
+            golpear "Enter"
+          </div>
+          <a href="#game" onclick="startGame()">START</a>
+        </div>
+        <div id="game-over" style="display: none">
+          <div id="displayWinner" class="winner"></div>
+          <a
+            href="#game"
+            onclick="startGame()"
+            style="
+              position: absolute;
+              align-items: center;
+              justify-content: center;
+              right: 0;
+              left: 0;
+            "
+            >RESTART</a
+          >
+        </div>
+      </section>
+      <nav class="navbar">
+        <a href="#section1" class="dot" data-scroll="1"></a>
+        <a href="#section2" class="dot" data-scroll="2"></a>
+        <a href="#section3" class="dot" data-scroll="3"></a>
+        <a href="#game" class="dot" data-scroll="juego"></a>
+      </nav>
+    </article>
+
+    <!-- MUSICA DE FONDO -->
+    <div class="floating-icon">
+      <div id="backgroundMusic" class="musicOff"></div>
+    </div>
+
+    <script src="./game/js/classes.js"></script>
+    <script src="./game/js/keys.js"></script>
+    <script src="./game/game.js"></script>
+  </body>
+</html>
