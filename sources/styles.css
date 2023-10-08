@@ -15,10 +15,14 @@
 
 body {
   min-height: 100vh;
-  background: url("./img/laboratorio_background.jpg") no-repeat;
-  background-size: cover;
+  overflow: hidden;
 }
 
+.background {
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
 .header {
   display: flex;
   position: sticky;
