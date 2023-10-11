@@ -14,14 +14,16 @@
 }
 
 body {
+  height: 100%;
+  width: 100%;
   min-height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   align-items: center;
   justify-content: center;
 }
 .video-container {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: absolute;
 }
@@ -31,7 +33,6 @@ body {
   width: 100%;
   height: auto;
   z-index: -10;
-  visibility: visible;
 }
 .header {
   display: flex;
@@ -40,11 +41,11 @@ body {
   left: 0;
   width: 100%;
   padding: 10px 50px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
 }
 .header::before {
@@ -57,10 +58,10 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.1),
     transparent
   );
-  transition: 0.5s;
+  transition: 1s;
 }
 .header:hover::before {
   left: 100%;
@@ -89,7 +90,7 @@ body {
   font-family: "Poppins";
   text-decoration: none;
   margin-left: 35px;
-  transition: 0.5s;
+  transition: 0.3s;
   padding: 5px 8px 5px 8px;
   border-radius: 10px;
 }
@@ -106,18 +107,41 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  background-color: red;
   overflow: hidden;
+  border-radius: 32px;
 }
-.scroller section {
+.scroller .infoSection {
   position: relative;
   display: flex;
   width: 100%;
   height: 100%;
   flex: 0 0 auto;
-  background-color: #1c1917;
+  background-color: rgba(29, 25, 24, 0.8);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-right: 2px solid rgba(255, 255, 255, 0.4);
+
+  backdrop-filter: blur(20px);
+
   border-radius: 32px;
   align-items: center;
   justify-content: center;
   color: white;
+}
+.scroller .infoSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transition: 2s;
+}
+.scroller .infoSection:hover::before {
+  left: 200%;
 }
