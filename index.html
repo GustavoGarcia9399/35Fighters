@@ -33,12 +33,19 @@
 
     <article class="scroller">
       <section id="home" class="infoSection">
-        <h1>HOME</h1>
+        <h1>35 FIGHTERS</h1>
+        <p></p>
+
         <p></p>
       </section>
       <section id="about" class="infoSection">
         <h1>ABOUT</h1>
-        <p></p>
+        <p>
+          Un juego de pelea flat 2d pixel art creado en Javascript como proyecto
+          de estudios secundarios, virtualizando como personajes a los
+          profesores Nahuel Armando y Carlos Lescano, profesores de desarrollo
+          de la Escuela Técnica N°35 Ingeniero Eduardo Latzina.
+        </p>
       </section>
       <section id="et35" class="infoSection">
         <h1>ET35</h1>
@@ -46,7 +53,42 @@
       </section>
       <section id="contact" class="infoSection">
         <h1>CONTACT</h1>
-        <p></p>
+        <form name="contact" method="post" netlify>
+          <div class="contactContainer">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              required
+              class="textblock"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email"
+              required
+              class="textblock"
+            />
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Your phone number"
+              class="textblock"
+              required
+            />
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write us a message"
+              class="textblock"
+            ></textarea>
+            <button type="submit" id="sendBtn">Send</button>
+          </div>
+        </form>
       </section>
     </article>
     <script src="./sources/index.js"></script>

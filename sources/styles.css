@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "Rubik Mono One";
-  src: url("./fonts/Rubik_Mono_One/RubikMonoOne-Regular.ttf");
-}
-@font-face {
   font-family: "Poppins";
   src: url("./fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Ubuntu Mono Italic";
+  src: url("./fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf");
 }
 
 * {
@@ -70,11 +70,11 @@ body {
   text-decoration: none;
   border-radius: 10px;
   align-items: center;
-  transition: 0.5s;
+  transition: 1s;
 }
 .logo:hover {
   background-color: white;
-  box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
+  box-shadow: 0 0 16px white, 0 0 32px white, 0 0 64px white;
 }
 .logo img {
   height: 48px;
@@ -90,42 +90,40 @@ body {
   font-family: "Poppins";
   text-decoration: none;
   margin-left: 35px;
-  transition: 0.3s;
+  transition: 1s;
   padding: 5px 8px 5px 8px;
   border-radius: 10px;
 }
 .navBtn:hover {
   background-color: white;
   color: black;
-  box-shadow: 0 0 2px white, 0 0 15px white, 0 0 25px white;
+  box-shadow: 0 0 16px white, 0 0 24px white, 0 0 64px white;
 }
 .scroller {
-  display: relative;
+  display: block;
   width: 960px;
   height: 480px;
   margin: 5% auto;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   flex-wrap: nowrap;
   overflow: hidden;
   border-radius: 32px;
 }
 .scroller .infoSection {
-  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  flex: 0 0 auto;
   background-color: rgba(29, 25, 24, 0.8);
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   border-right: 2px solid rgba(255, 255, 255, 0.4);
-
   backdrop-filter: blur(20px);
-
   border-radius: 32px;
-  align-items: center;
-  justify-content: center;
   color: white;
+  padding: 32px;
 }
 .scroller .infoSection::before {
   content: "";
@@ -144,4 +142,51 @@ body {
 }
 .scroller .infoSection:hover::before {
   left: 200%;
+}
+
+h1 {
+  display: flex;
+  width: 100%;
+}
+#home p {
+  position: block;
+  align-items: center;
+  justify-content: center;
+}
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.textblock {
+  resize: none;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 6px;
+  font-family: "Ubuntu Mono Italic";
+}
+#message {
+  width: 80%;
+}
+#sendBtn {
+  display: block;
+  position: relative;
+  height: 32px;
+  width: 64px;
+  margin-bottom: 10px;
+  font-family: "Ubuntu Mono Italic";
+  font-size: 16px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  transition: 1s;
+}
+#sendBtn:hover {
+  box-shadow: 0 0 16px white, 0 0 24px white, 0 0 64px white;
 }
