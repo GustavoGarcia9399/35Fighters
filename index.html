@@ -24,7 +24,7 @@
       /></a>
       <nav class="navBar">
         <a href="#home" class="navBtn">Home</a>
-        <a href="#about" class="navBtn">About</a>
+        <!-- <a href="#about" class="navBtn">About</a> -->
         <a href="#et35" class="navBtn">ET°35</a>
         <a href="#contact" class="navBtn">Contact</a>
         <a href="./game.html" class="navBtn">PLAY</a>
@@ -34,61 +34,107 @@
     <article class="scroller">
       <section id="home" class="infoSection">
         <h1>35 FIGHTERS</h1>
-        <p></p>
+        <div class="pContainer">
+          <p>
+            Un juego creado por Gustavo García como Proyecto de 6to año
+            Computación
 
-        <p></p>
+            <br />
+            <a style="color: lightgreen; text-decoration: none" href="#et35"
+              >Escuela Técnica N°35 - Ingeniero Eduardo Latzina</a
+            >
+          </p>
+        </div>
       </section>
-      <section id="about" class="infoSection">
-        <h1>ABOUT</h1>
-        <p>
-          Un juego de pelea flat 2d pixel art creado en Javascript como proyecto
-          de estudios secundarios, virtualizando como personajes a los
-          profesores Nahuel Armando y Carlos Lescano, profesores de desarrollo
-          de la Escuela Técnica N°35 Ingeniero Eduardo Latzina.
-        </p>
-      </section>
+      <!-- <section id="about" class="infoSection">
+        <h1>About</h1>
+        <div class="pContainer">
+          <p>
+            35 Fighters is a 2D fighting game developed entirely in HTML and
+            JavaScript, created from the image of two high school computer
+            science teachers from the
+            <a style="color: lightgreen; text-decoration: none" href="#et35"
+              >Escuela Técnica N°35 - Ingeniero Eduardo Latzina</a
+            >.
+          </p>
+        </div>
+      </section> -->
+
       <section id="et35" class="infoSection">
-        <h1>ET35</h1>
-        <p></p>
+        <h1>Escuela Técnica N°35 - Ingeniero Eduardo Latzina</h1>
+        <div class="pContainer">
+          <p>
+            La escuela inicio su funcionamiento el 23 de abril de 1951 con el
+            nombre de Escuela Fabrica de la Nación Automotores, al año siguiente
+            se le agregó el número 136. Por iniciativa del entonces director Sr.
+            Antonino Di Grillo, a mediado del 1953, la denominación de la
+            escuela fue la siguiente: Escuela Fabrica de la Nación Automotores
+            N° 136 Eva Perón. El CONET ordena reordenar el número de las
+            escuelas según la fecha de creación y la ciudad de su asentamiento,
+            así desde 1966 pasa a llamarse: Escuela de Educación Técnica N° 35
+            “Ingeniero Eduardo Latzina”.<br />
+            Es una escuela que forma técnicos/as en Automotores y Computación.
+            Cuenta con espacio digital y kits de electrónica para brindarles las
+            herramientas necesarias a sus estudiantes para los desafíos del
+            siglo XXI. Es una de las Secundarias del Futuro de la Ciudad y
+            ofrece actividades como curso de nivelación de automotores, Autocad
+            y teatro. Enseña inglés de 1.° a 5.° año y alemán. Ganó las
+            Olimpiadas de Programación Nacional organizadas por el INET. Esta
+            institución ofrece la Modalidad Técnico Profesional de Nivel
+            Secundario en las diversas especialidades, brindando así mejores
+            oportunidades formativas frente a los desafíos que presentan
+            innovaciones en el campo científico tecnológico, posibilitando
+            formar técnicos capaces de dar las respuestas necesarias que el
+            sistema socio productivo requiere, siendo ésta una necesidad
+            insoslayable.
+          </p>
+        </div>
       </section>
       <section id="contact" class="infoSection">
-        <h1>CONTACT</h1>
-        <form name="contact" method="post" netlify>
-          <div class="contactContainer">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your name"
-              required
-              class="textblock"
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your email"
-              required
-              class="textblock"
-            />
-            <input
-              type="text"
-              name="phone"
-              id="phone"
-              placeholder="Your phone number"
-              class="textblock"
-              required
-            />
+        <h1>Déjanos un mensaje!</h1>
+        <div class="formTextContainer">
+          <form name="contact" method="post" netlify>
+            <div class="contactContainer">
+              <input
+                name="name"
+                type="text"
+                id="name"
+                class="textblock"
+                placeholder="Tu nombre"
+                required
+              />
+              <input
+                name="email"
+                type="email"
+                id="email"
+                class="textblock"
+                placeholder="Tu e-mail"
+                required
+              />
+              <input
+                name="phone"
+                type="text"
+                id="phone"
+                class="textblock"
+                placeholder="Tu teléfono"
+                required
+              />
+            </div>
             <textarea
-              id="message"
               name="message"
-              rows="5"
-              placeholder="Write us a message"
+              id="message"
               class="textblock"
+              rows="5"
+              placeholder="Tu mensaje"
             ></textarea>
-            <button type="submit" id="sendBtn">Send</button>
-          </div>
-        </form>
+            <button type="submit" id="sendBtn">Enviar</button>
+          </form>
+
+          <p>
+            Si tiene alguna pregunta o comentario que pueda brindarnos para
+            ayudarnos a avanzar en este camino, háganoslo saber.
+          </p>
+        </div>
       </section>
     </article>
     <script src="./sources/index.js"></script>
