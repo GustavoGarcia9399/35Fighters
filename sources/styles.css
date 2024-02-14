@@ -6,6 +6,16 @@
   font-family: "Ubuntu Mono Italic";
   src: url("./fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf");
 }
+@font-face {
+  font-family: "Tektur";
+  src: url("./fonts/Tektur/Tektur.ttf");
+  font-weight: 0 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./fonts/Press_Start_2P/PressStart2P-Regular.ttf");
+}
 
 * {
   box-sizing: border-box;
@@ -104,17 +114,13 @@ body {
   width: 960px;
   height: 480px;
   margin: 5% auto;
-  /* align-items: center; */
   justify-content: center;
   flex-wrap: nowrap;
   overflow: hidden;
   border-radius: 32px;
 }
-.scroller .infoSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.infoSection {
+  display: block;
   width: 100%;
   height: 100%;
   background-color: rgba(29, 25, 24, 0.8);
@@ -125,7 +131,7 @@ body {
   color: white;
   padding: 32px;
 }
-.scroller .infoSection::before {
+.infoSection::before {
   content: "";
   position: absolute;
   top: 0;
@@ -140,46 +146,125 @@ body {
   );
   transition: 2s;
 }
-.scroller .infoSection:hover::before {
+.infoSection:hover::before {
   left: 200%;
 }
 
-h1 {
+.pContainer {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#home {
+  padding: 5%;
+}
+#home h1 {
+  display: flex;
+  font-family: "Press Start 2P";
+  font-size: 96px;
+  width: 100%;
+  text-align: center;
+}
+#home .pContainer {
+  height: 50%;
+  align-content: flex-end;
 }
 #home p {
-  position: block;
+  display: flex;
+  flex-direction: column;
+  font-family: "Ubuntu Mono Italic";
+  font-size: 18px;
+  justify-content: center;
   align-items: center;
+  align-content: flex-end;
+}
+#about h1 {
+  font-family: "Tektur";
+  font-weight: 350;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
   justify-content: center;
 }
-#contact {
-  display: flex;
-  align-items: center;
+#about p {
+  font-family: "Ubuntu Mono Italic";
+  font-size: 18px;
+  justify-items: center;
+}
+#et35 h1 {
+  font-family: "Tektur";
+  font-weight: 350;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
   justify-content: center;
+}
+#et35 p {
+  font-family: "Ubuntu Mono Italic";
+  font-size: 18px;
+}
+#contact {
+  align-items: center;
+}
+#contact h1 {
+  font-family: "Tektur";
+  font-weight: 350;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.formTextContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+  align-content: center;
+  justify-content: center;
+}
+#contact form {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  width: 70%;
+  padding: 16px;
+}
+.formTextContainer p {
+  display: flex;
+  width: 20%;
+  padding: 16px;
+  font-family: "Ubuntu Mono Italic";
+  font-size: 18px;
 }
 .contactContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .textblock {
   resize: none;
-  padding: 15px;
-  margin: 30px;
+  margin: 0px 0px 16px 0;
+  padding-bottom: 15px;
   border-radius: 6px;
   font-family: "Ubuntu Mono Italic";
+  font-size: 16px;
 }
 #message {
-  width: 80%;
+  width: auto;
 }
 #sendBtn {
   display: block;
   position: relative;
   height: 32px;
   width: 64px;
-  margin-bottom: 10px;
   font-family: "Ubuntu Mono Italic";
   font-size: 16px;
   text-align: center;
